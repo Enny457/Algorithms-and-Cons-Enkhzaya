@@ -4,13 +4,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-
+/**
+ * GUI for managing a Cake Oven.
+ * Allows adding, removing, peeking, and displaying cakes.
+ */
 public class CakeOvenGUI extends JFrame {
+    private static final int FIELD_WIDTH = 10;
+    private static final int FRAME_WIDTH = 500;
+    private static final int FRAME_HEIGHT = 400;
+    
     private CakeOven oven = new CakeOven();
 
-    private JTextField nameField = new JTextField(10);
-    private JTextField weightField = new JTextField(10);
-    private JTextField dateField = new JTextField(10); // YYYY-MM-DD
+   private JTextField nameField = new JTextField(FIELD_WIDTH);
+    private JTextField weightField = new JTextField(FIELD_WIDTH);
+    private JTextField dateField = new JTextField(FIELD_WIDTH); // YYYY-MM-DD
     private JTextArea outputArea = new JTextArea(10, 30);
 
     public CakeOvenGUI() {
@@ -52,7 +59,9 @@ public class CakeOvenGUI extends JFrame {
 
         setVisible(true);
     }
-
+/**
+ * Adds a cake to the oven after validating user input.
+ */
     private void addCake() {
         String name = nameField.getText().trim();
         String weightText = weightField.getText().trim();
@@ -103,7 +112,7 @@ public class CakeOvenGUI extends JFrame {
 
     private void peekCake() {
         if (oven.isEmpty()) {
-            showMessage("Oven is empty.");
+            showMessage("There are no cakes in the oven.");
         } else {
             Cake peeked = oven.peekCake();
             showMessage("First cake: " + peeked.getName());
