@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cakeovenapp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -19,7 +15,7 @@ public class Cake {
         this.name = name;
         this.weight = weight;
         this.bestBefore = bestBefore;
-        this.addedTime = LocalDateTime.now(); // Auto timestamp
+        this.addedTime = LocalDateTime.now(); 
     }
 
     public String getName() {
